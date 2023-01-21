@@ -4,7 +4,7 @@ Challenge Week 7: Planner App
 
 ## Description 
 
-In this project I introduce a real-world application to JavaScript and Third-Party APIs. The aim is to build a work day scheduler. You can see a demo [here]().
+In this project I introduce a real-world application to JavaScript and Third-Party APIs. The aim is to build a work day scheduler. You can see a demo [here](https://danielpsnz.github.io/PerezSanzDaniel_PlannerApp/).
 
 ## Usage 
 
