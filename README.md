@@ -10,7 +10,7 @@ In this project I introduce a real-world application to JavaScript and Third-Par
 
 The portfolio should be seen as below: 
 
-![alt text](./Screenshot 2023-01-21 at 01.26.16)
+![alt text](./"Screenshot 2023-01-21 at 01.26.16")
 
 
 ## Credits
