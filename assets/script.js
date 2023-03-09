@@ -7,12 +7,12 @@ var currentHourInt = parseInt(currentHour); // Parse it so that hour returns as 
 $("#9am").attr("data-time", moment("9:00 am", "h:mm a").format("HH"));
 $("#10am").attr("data-time", moment("10:00 am", "hh:mm a").format("HH"));
 $("#11am").attr("data-time", moment("11:00 am", "hh:mm a").format("HH"));
-$("#12pm").attr("data-time", moment("12:00 pm", "hh:mm a").format("HH"));
-$("#1pm").attr("data-time", moment("1:00 pm", "h:mm a").format("HH"));
-$("#2pm").attr("data-time", moment("2:00 pm", "h:mm a").format("HH"));
-$("#3pm").attr("data-time", moment("3:00 pm", "h:mm a").format("HH"));
-$("#4pm").attr("data-time", moment("4:00 pm", "h:mm a").format("HH"));
-$("#5pm").attr("data-time", moment("5:00 pm", "h:mm a").format("HH"));
+$("#12am").attr("data-time", moment("12:00 pm", "hh:mm a").format("HH"));
+$("#1am").attr("data-time", moment("1:00 pm", "h:mm a").format("HH"));
+$("#2am").attr("data-time", moment("2:00 pm", "h:mm a").format("HH"));
+$("#3am").attr("data-time", moment("3:00 pm", "h:mm a").format("HH"));
+$("#4am").attr("data-time", moment("4:00 pm", "h:mm a").format("HH"));
+$("#5am").attr("data-time", moment("5:00 pm", "h:mm a").format("HH"));
 
 //start jQuery 
 $(document).ready(function () {
@@ -31,17 +31,17 @@ $(document).ready(function () {
   // Change color in each row by adding in am attribute (above) for each input line to reflect the current hour 
   for (var i = 0; i <= 12; i++) {  
 
-      var inputHour = $("#" + i + "Row").attr("data-time"); // Variable for the hour of the row 
+      var inputHour = $("#" + i + "am").attr("data-time"); // Variable for the hour of the row 
       var inputHourInt = parseInt(inputHour); // Parse it so that hour returns as an integer
 
       if (currentHourInt === inputHourInt) {
-          $("#" + i + "Row").addClass("present"); // Applies red color if within the present hour 
+          $("#" + i + "am").addClass("present"); // Applies red color if within the present hour 
       }
       if (currentHourInt > inputHourInt) { // Applies grey color if hour is in the future 
-          $("#" + i + "Row").addClass("past");
+          $("#" + i + "am").addClass("past");
       }
       if (currentHourInt < inputHourInt) { // Applies green color if hour is in the future 
-          $("#" + i + "Row").addClass("future");
+          $("#" + i + "am").addClass("future");
       }
     }
 
@@ -49,14 +49,14 @@ $(document).ready(function () {
     saveBtn.on("click", function () { // On-click 
 
       var rowHour = $(this).attr("data-hour"); // variable referencing the assigned hour row in the html doc 
-      var input = $("#" + rowHour + "Row").val(); // saves the text that has been entered into the input column 
+      var input = $("#" + rowHour + "am").val(); // saves the text that has been entered into the input column 
       localStorage.setItem(rowHour, input); //saves input to local storaage
     });
   
     //  Function to retrieve the stored input that was saved in each input 
     function renderPlans() {
       for (var i = 0; i <= 12; i++) {
-      $("#" + i + "Row").val(localStorage.getItem(i));
+      $("#" + i + "am").val(localStorage.getItem(i));
       }
     }
 });
